@@ -304,5 +304,33 @@ $app->put('/api/users/upsesion/{id:[0-9]+}', function($id) use ($app){
   return $response;
 });
 
+$app->put('/api/users/downsesion/{id:[0-9]+}', function($id) use ($app){
+  //actualizar la posicion de un usuario respecto a su id
+  $phql = "update usuarios set sesion = :sesion: where idUsuario = :id:";
+  $status = $app->modelsManager->executeQuery($phql,array(
+    'id'=>$id,
+    'sesion'=>"offline"
+  ));
+
+  $response = new Response();
+
+  if($status->success()==true){
+    $response->setJsonContent(array('status'=>'OK'));
+  }else{
+    $response->setStatusCode(409,'conflict');
+    $errors = array();
+    foreach ($status->getMessages() as $message) {
+      $errors[] = $message->getMessage();
+    }
+    $response->setJsonContent(
+      array(
+        'status'=>'ERROR',
+        'messages'=>$errors
+      )
+    );
+  }
+  return $response;
+});
+
 
 ?>

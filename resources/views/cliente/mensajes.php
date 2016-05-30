@@ -1,9 +1,15 @@
 
   <div class="empleado-content">
     <h2>Mensajes</h2>
-    <form >
-       <i class="fa fa-user fa-2x"></i>
-       <textarea class="textArea" rows="10" readonly = "readonly" ng-model="mensaje" ng-list="&#10;" ng-trim="false"></textarea>
+    <form >      
+       <div class="textarea">
+       	<br><br>
+       	<div id="mensajes" >
+       		<div class="texto" ng-repeat="mensaje in mensajes">
+       			<i class="fa fa-user fa-2x"></i> <strong>Admin:</strong>{{mensaje.mensaje}}
+       		</div>
+       	</div>
+       </div>    
 
      <br>    
     </form>

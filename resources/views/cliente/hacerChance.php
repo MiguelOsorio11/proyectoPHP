@@ -75,7 +75,7 @@
       </table>
     </div>
     <div class="group">
-      <input class="inputs-sign" type="number"  maxlength="30" disable  string-to-number  ng-model="transaccion.acumulado" >
+      <input class="inputs-sign" type="number"  maxlength="30" ng-model="transaccion.acumulado" enable="false" >
       <label for="">acumulado</label>
       <span class="bar"></span>
     </div>
@@ -90,15 +90,21 @@
   $('.inputs-sign').on("focusout",function() {
     var inputs = document.getElementsByClassName("inputs-sign");
     var cifrasApostar =inputs[0];
-    var valorApostar = inputs[1];
-    var premioApuesta = inputs[2];
-    var celular = inputs[3];
-    var acumulado = inputs[4];
+    var serie =inputs[1];
+    var valorApostar = inputs[2];
+    var premioApuesta = inputs[3];
+    var celular = inputs[4];
+    var acumulado = inputs[5];
 
     if (cifrasApostar.value) {
       $(cifrasApostar).addClass("used");
     } else {
       $(cifrasApostar).removeClass("used");
+    }
+    if (serie.value) {
+      $(serie).addClass("used");
+    } else {
+      $(serie).removeClass("used");
     }
     if (valorApostar.value) {
       $(valorApostar).addClass("used");

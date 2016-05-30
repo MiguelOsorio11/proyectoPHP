@@ -105,7 +105,7 @@ $app->put('/api/modos/{id:[0-9]+}', function($id) use ($app){
 //Modos de apuesta de una loteria
 $app->get('/api/modos/search/{id:[0-9]+}', function($id) use ($app){
   //obtener los usuarios
-  $phql = "select mo.idModo, mo.nombre, mo.tarifa, mo.habilitacion, mo.signo  from modosloterias as ml inner join modos as mo on ml.idModo = mo.idModo inner join loterias as lo on ml.idLoteria = lo.idLoteria where ml.idLoteria = :id:";
+  $phql = "select mo.idModo, mo.nombre, mo.tarifa, mo.habilitacion, mo.signo  from modosloterias as ml inner join modos as mo on ml.idModo = mo.idModo inner join loterias as lo on ml.idLoteria = lo.idLoteria where ml.idLoteria = :id: and mo.habilitacion = 1";
   $rows = $app->modelsManager->executeQuery($phql,    
     array(
       'id'=>$id

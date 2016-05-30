@@ -6,13 +6,20 @@ appModule.controller('indexController',function($scope,$http,$cookies,$cookieSto
   $scope.user.username = $cookies.get("username");
 
   $scope.logout = function(){
+
+    $http({
+      method:'PUT',
+      url:'http://localhost/TuChance/api/users/downsesion/'+$cookies.get("id")
+    }).then(function successCallback(response) {      
+        
+      });
+
     $cookies.remove("username",{path:'/'});
     $cookies.remove("password",{path:'/'});
     $cookies.remove("tipo",{path:'/'});
     $cookies.remove("id",{path:'/'});
     window.location.assign("http://localhost/TuChance/resources/views/index.php");
   };
-
 });
 
 
@@ -238,7 +245,7 @@ appModule.controller('AppHacerChance',function($scope,$http,$cookies){
 /*
   Controlador de la pagina del chat.
 */
-appModule.controller('AppChat',function($scope,$http){
+appModule.controller('AppChat',function($scope,$http,$cookies){
 
   $scope.mensajes=[];
   $scope.mensaje={};
@@ -256,7 +263,17 @@ appModule.controller('AppChat',function($scope,$http){
       });
   }
 
-  $scope.getModoApuestas(4);
+  $scope.getModoApuestas($cookies.get("id"));
+
+  function mostrarMensajes(){
+    $scope.i=0;
+    if($scope.mensajes!==null || !$scope.mensajes!== 'undefined'){
+      for ($scope.i in $scope.mensajes) {          
+        $scope.mensaje.mensaje +=   ($scope.mensajes[$scope.i].mensaje)+"\n";
+             console.log($scope.totalDia);
+      }
+    }
+  }
 
 });
 
