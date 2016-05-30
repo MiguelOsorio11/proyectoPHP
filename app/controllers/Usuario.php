@@ -246,6 +246,36 @@ $app->post('/api/user/login', function() use ($app){
   }
 });
 
+$app->get('/api/usuarios/clientes/masapuestas', function() use ($app){
+  //obtener el top 10 de los usuarios con mas ventas (apuestas)
+  $phql = "select usuarios.nombre, count(apuestas.idUsuario) as numeroVenta from usuarios left join apuestas on apuestas.idUsuario = usuarios.idUsuario group by usuarios.idUsuario order by numeroVenta desc limit 10";
+  $ventasClientes = $app->modelsManager->executeQuery($phql);
+
+  $data = array();
+  foreach ($ventasClientes as $ventaCliente) {
+    $data[] = array(
+      'nombre'=>$ventaCliente->nombre,
+      'numeroVenta'=>$ventaCliente->numeroVenta
+    );
+  }
+  echo json_encode($data);
+});
+
+$app->get('/api/usuarios/clientes/menosapuestas', function() use ($app){
+  //obtener el top 10 de los usuarios con menos ventas (apuestas)
+  $phql = "select usuarios.nombre, count(apuestas.idUsuario) as numeroVenta from usuarios left join apuestas on apuestas.idUsuario = usuarios.idUsuario group by usuarios.idUsuario order by numeroVenta asc limit 10";
+  $ventasClientes = $app->modelsManager->executeQuery($phql);
+
+  $data = array();
+  foreach ($ventasClientes as $ventaCliente) {
+    $data[] = array(
+      'nombre'=>$ventaCliente->nombre,
+      'numeroVenta'=>$ventaCliente->numeroVenta
+    );
+  }
+  echo json_encode($data);
+});
+
 $app->put('/api/users/upsesion/{id:[0-9]+}', function($id) use ($app){
   //actualizar la posicion de un usuario respecto a su id
   $phql = "update usuarios set sesion = :sesion: where idUsuario = :id:";

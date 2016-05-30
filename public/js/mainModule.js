@@ -10,7 +10,7 @@ modulo.factory("auth", function($cookies,$cookieStore,$location,$http)
             url:'http://localhost/TuChance/api/user/login/',
             data: angular.toJson(user,true)
           }).then(function successCallback(response){
-            if(angular.fromJson(response.data).status === "FAIL"){
+            if(angular.fromJson(response.data).status === "FAIL" || response.data.estado==0){
               alert("Sus credenciales son invalidas");
             }else{
 
@@ -60,7 +60,7 @@ modulo.factory("auth", function($cookies,$cookieStore,$location,$http)
                   },function(){alert("Se produjo un error");},geo_options);
                 }else{
                   alert("no se permite la localizacion");
-                }         
+                }
 
               }else if(response.data.tipo == "administrador"){
                 $cookies.put("username",response.data.username,{path:'/'});
