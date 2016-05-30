@@ -1,0 +1,25 @@
+.chart{
+  background-color: #EDF2F7;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+
+  -webkit-box-shadow: 10px 10px 156px -20px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 156px -20px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 156px -20px rgba(0,0,0,0.75);
+
+  padding: 1em;
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1024px){
+  /*Self*/
+}
+
+@media only screen and (min-width : 321px) and (max-width : 767px){
+  /*Self*/
+}
+
+@media only screen and (max-width : 320px){
+  /*Self*/
+}

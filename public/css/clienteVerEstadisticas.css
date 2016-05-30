@@ -1,0 +1,435 @@
+html, body,form{
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+header{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #424A4D;
+  color: white;
+  height: 50px;
+  z-index: 60000;
+  box-shadow: 10px 10px 19px -2px rgba(0,0,0,0.47);
+}
+.contenedor-barra{
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100%;
+}
+.logo-navbar{
+  float: left;
+  width: 18%;
+ 
+}
+.logo-navbar a{
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+.nav-options a{
+  color: white;
+}
+.contenedor-barra nav{
+  float: right;
+}
+header{
+  -webkit-transition-property: box-shadow;
+  -webkit-transition-duration: 0.5s, 1s;
+  -webkit-transition-timing-function: linear; ease-out;
+
+  -moz-transition-property: box-shadow;
+  -moz-transition-duration: 0.5s, 1s;
+  -moz-transition-timing-function: linear; ease-out;
+
+  transition-property: box-shadow;
+  transition-duration: 0.5, 1s;
+  transition-timing-function: linear; ease-out;
+}
+header:hover{
+  -webkit-box-shadow: 10px 10px 43px -2px rgba(0,0,0,0.38);
+  -moz-box-shadow: 10px 10px 43px -2px rgba(0,0,0,0.38);
+  box-shadow: 10px 10px 43px -2px rgba(0,0,0,0.38);
+}
+
+.main-content{
+  margin-top: 70px;
+
+}
+
+.empleado-content {
+    margin-left: 22%;
+    margin-top: 2%;
+    float: left;
+    width: 60%;
+    box-shadow: 10px 10px 57px -2px rgba(0,0,0,0.47);
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+    background-color: white;
+    
+}
+h2{
+  text-align: center;
+}
+
+
+
+.nav-options{
+    width: 53%
+}
+
+.nav-options nav{
+  width: 65%;
+}
+.nav-options ul{
+    list-style: none;
+    width: 80%;
+    float: left;    
+}
+
+.nav-options ul li{
+    margin-left: 4%;
+    float: left;
+    list-style: none;
+}
+
+.nav-options ul  li a{
+  text-decoration: none;
+  color: #FFF;
+}
+.logo-iniciar-sesion{
+  float: right;
+}
+
+.responsive-nav, .responsive{
+  display: none;
+}
+
+.dropbtn {
+    background-color: #424A4D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    overflow: auto;
+    min-width: 260px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+    color: black;
+    padding: 16px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+.dropdown a:hover {
+  background-color: #f1f1f1
+}
+.show {
+  display:block;
+}
+
+.resultados-tablas input{
+    float: right;
+    width: 15%;
+    margin-right: 30%;
+}
+.resultados-tablas h3{
+    float: left;
+    text-align: center;
+    width: 20%;
+    margin-left: 30%;
+}
+
+
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+@media only screen and (min-width: 1025px){
+  .dropdown{
+    display: none;
+  }
+}
+
+/*tablet*/
+@media only screen and (min-width : 768px) and (max-width : 1024px){
+
+  .empleado-content {
+    margin-left: 15%;
+    width: 70%;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .contenedor-barra{
+    margin-left: 0px;
+  }
+
+  .logo-navbar {    
+    width: 10%;    
+  }
+
+  .name-admin, .nav-ul, .text-logo{
+    display: none;
+  }
+
+  .nav-options {
+    width: 60%;
+  }
+
+
+  .dropdown, .responsive-nav, .responsive{
+    display: block;
+  }
+  .dropdown{
+    float:left;
+  }
+
+  i.fa.fa-home{
+    display: none;
+  }
+
+  .dropbtn{
+    margin-top: 0px;
+    display: inline-block;
+  }
+
+  .responsive-nav{
+    width: 70%;
+    float: right;
+  }
+
+  .responsive-nav nav{
+    width: 35%;
+  }
+
+  .responsive-nav ul{
+    list-style: none;
+    width: 50%;          
+  }
+
+  .responsive-nav ul li{  
+    float: left;
+    list-style: none;
+  }
+
+  .responsive-nav ul  li a{
+    text-decoration: none;
+    font-size: 18px;
+     color: #FFF;
+  }
+
+}
+
+@media only screen and (min-width : 321px) and (max-width : 767px){
+
+ .contenedor-barra{
+    margin-left: 0px;
+ }
+   i.fa.fa-home{
+    display: none;
+  }
+
+   .logo-navbar {    
+    width: 10%;    
+  }
+
+  .name-admin, .nav-ul, .text-logo{
+    display: none;
+  }
+
+  .nav-options {
+    width: 75%;
+  }
+
+   .nav-options ul {
+    width: 50%;
+    margin-left: 10%;
+  }
+
+  .dropdown, .responsive-nav{
+    display: block;
+  }
+  .dropdown{
+    float:left;
+  }
+
+  .fa-home{
+    display: none;
+  }
+
+  .dropbtn{
+    margin-top: 0px;
+    display: inline-block;
+  }
+
+  .responsive-nav{
+    width: 86%;
+    float: right;
+  }
+
+  .responsive-nav nav{
+    width: 35%;
+  }
+
+  .responsive-nav ul{
+    list-style: none;           
+  }
+
+  .responsive-nav ul li{  
+    float: left;
+    list-style: none;
+  }
+
+  .responsive-nav ul  li a{
+    text-decoration: none;
+    font-size: 18px;
+     color: #FFF;
+  }
+
+  .empleado-content{
+    margin-left: 8%;
+    width: 76%;
+  }
+
+
+}
+
+@media only screen and (max-width : 320px){
+
+
+ .contenedor-barra{
+    margin-left: 0px;
+ }
+   i.fa.fa-home{
+    display: none;
+  }
+
+   .logo-navbar {    
+    width: 132%;    
+  }
+
+  .name-admin, .nav-options, .text-logo{
+    display: none;
+  }
+
+
+  .dropdown, .responsive-nav{
+    display: block;
+  }
+  .dropdown{
+    float:left;
+  }
+
+  .fa-home{
+    display: none;
+  }
+
+  .dropbtn{
+    margin-top: 0px;
+    display: inline-block;
+  }
+
+  .responsive-nav{
+    width: 86%;
+    float: right;
+  }
+
+  .responsive-nav nav{
+    width: 35%;
+  }
+
+  .responsive-nav ul{
+    list-style: none;           
+  }
+
+  .responsive-nav ul li{  
+    float: left;
+    list-style: none;
+  }
+
+  .responsive-nav ul  li a{
+    text-decoration: none;
+    font-size: 18px;
+     color: #FFF;
+  }
+
+  .empleado-content{
+    margin-left: 8%;
+    width: 76%;
+  }
+
+  .nav-options {
+    width: 60%;
+  }
+
+  .nav-options ul {
+    width: 50%;
+  }
+
+}

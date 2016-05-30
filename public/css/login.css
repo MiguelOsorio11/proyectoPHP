@@ -1,0 +1,123 @@
+.info-content{
+  width: 86%;
+}
+
+.formulario-inicio{
+  margin-top: 20px;
+  width: 100%;
+}
+.login {
+  padding: 2.5em;
+}
+.group {
+  position: relative;
+  margin-bottom: 2.4em;
+}
+
+label {
+  color: #d2d2d2;
+  font-size: 15px;
+  font-weight: normal;
+  font-family: sans-serif;
+  position: absolute;
+  pointer-events: none;
+  top: 30px;
+  transition: 0.2s ease all;
+  margin-left: 40px;
+}
+
+input {
+  position: relative;
+  color: #909090;
+  font-size: 15px;
+  padding: 0px 0px 10px 0px;
+  display: block;
+  outline: none;
+  border: none;
+  width: 50%;
+  border-bottom: 1px solid #d2d2d2;
+  margin-left: 40px;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 50%;
+  margin-left: 40px;
+}
+
+.bar:before, .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: -1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+input:valid {
+  border-bottom: 1px solid #4fc24f;
+}
+
+input:valid ~ .bar:before,
+input:valid ~ .bar:after {
+  background: #4fc24f !important;
+}
+
+input:focus ~ label,
+input.used ~ label {
+  top: -5px;
+  font-size: 13px;
+  color: #5264ae;
+}
+
+input:valid ~ label,
+input:valid.used ~ label {
+  color: #4fc24f;
+}
+
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+button {
+  position: relative;
+  display: block;
+  min-width: 88px;
+  padding: 12px 20px;
+  height: 3em;
+  margin: 2em;
+  border: none;
+  outline: none;
+  letter-spacing: 0;
+  font-weight: bold;
+  background: #0dad88;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 3px;
+ }
+
+ @media only screen and (min-width : 768px) and (max-width : 1024px){
+   /*self*/
+ }
+
+ @media only screen and (min-width : 321px) and (max-width : 767px){
+   .bar,input{
+    width: 80%;
+  }
+ }
+
+ @media only screen and (max-width : 320px){
+   .bar,input{
+    width: 80%;
+  }
+ }
